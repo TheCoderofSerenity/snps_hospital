@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #00C9FF, #92FE9D);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #00796b;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        .links {
+            margin-top: 15px;
+        }
+        .links a {
+            color: #00796b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            display: none; /* Hide error message initially */
+            margin-top: 10px;
+        }
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #00796b;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Doctor Login</h1>
+</header>
+
+<div class="container">
+    <form id="doctorLoginForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+            <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+        </div>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <div class="links">
+        <a href="fpas_doctor.html">Forgot Password?</a>
+        <a href="roles.html">Return to Roles</a>
+    </div>
+    
+    <p class="error-message" id="errorMessage">Invalid username or password.</p>
+</div>
+
+<script>
+    document.getElementById('doctorLoginForm').onsubmit = function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Get input values
+        const username = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+
+        // Check credentials
+        if (username === 'Partha goswami' && password === 'partha@doctor') {
+            // If credentials are correct, redirect to doctor dashboard
+            window.location.href = 'doctor_dashboard.html'; 
+        } else {
+            // Show error message if credentials are incorrect
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.style.display = 'block'; // Show the error message
+        }
+    };
+
+    // Toggle password visibility
+    document.getElementById('togglePassword').onclick = function() {
+        const passwordInput = document.getElementById('password');
+        const passwordType = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', passwordType);
+        this.textContent = passwordType === 'password' ? '👁️' : '🙈'; // Change icon
+    };
+</script>
+
+</body>
+</html>

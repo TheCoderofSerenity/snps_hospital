@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Staff Dashboard - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Full viewport height for proper alignment */
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            flex: 1; /* Ensures container grows to fill space */
+        }
+        .button {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 25px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #004d40;
+        }
+        .logout {
+            background-color: #00796b; /* Same color as other buttons */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .logout:hover {
+            background-color: #004d40; /* Hover effect */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Billing Staff Dashboard</h1>
+</header>
+
+<div class="container">
+    <a href="generate_bill.html" class="button">Generate Bill</a>
+    <a href="process_payment.html" class="button">Process Payment</a>
+    <a href="request_invoice.html" class="button">Request Invoice</a>
+    <a href="request_financial_report.html" class="button">Request Financial Report</a>
+</div>
+
+<!-- Logout button positioned at the bottom -->
+<button class="logout" onclick="window.location.href='logout.html'">Logout</button>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #00C9FF, #92FE9D);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .dashboard-item {
+            background-color: #00796b;
+            color: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dashboard-item:hover {
+            background-color: #004d40;
+        }
+        .dashboard-item a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+        }
+        .dashboard-item a:hover {
+            text-decoration: underline;
+        }
+        .logout {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .logout a {
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout a:hover {
+            color: #004d40;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Your Dashboard</h1>
+</header>
+
+<div class="container">
+    <div class="dashboard-item">
+        <a href="list_doctors.html">View List of Doctors</a>
+    </div>
+    <div class="dashboard-item">
+        <a href="make_appointment.html">Make an Appointment</a>
+    </div>
+    <div class="dashboard-item">
+        <a href="cancel_appointment.html">Cancel an Appointment</a>
+    </div>
+    <div class="dashboard-item">
+        <a href="submit_feedback.html">Submit Feedback</a>
+    </div>
+    <div class="dashboard-item">
+        <a href="medical_records.html">View Medical Records</a>
+    </div>
+    <div class="dashboard-item">
+        <a href="view_prescriptions.html">View Prescriptions</a>
+    </div>
+    <div class="logout">
+        <p><a href="logout.html">Logout</a></p>
+    </div>
+</div>
+
+</body>
+</html>

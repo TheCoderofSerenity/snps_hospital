@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPNS Hospital Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('hospital_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+        }
+        header {
+            background-color: rgba(0, 128, 0, 0.8);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            margin: 30px 0;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .choose-user {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .choose-user:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: rgba(0, 128, 0, 0.8);
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to SPNS Hospital</h1>
+</header>
+
+<div class="container">
+    <p class="description">
+        SPNS Hospital is committed to providing exceptional medical care with advanced technology and a dedicated team of healthcare professionals. From emergency services to specialized treatments, we ensure that every patient receives personalized care in a compassionate environment. Your health is our priority.
+    </p>
+    <button class="choose-user" onclick="window.location.href='roles.html'">Choose User</button>
+</div>
+
+<footer>
+    &copy; 2024 SPNS Hospital Management System. All rights reserved.
+</footer>
+
+</body>
+</html>

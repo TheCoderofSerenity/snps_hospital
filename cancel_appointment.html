@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel an Appointment - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #00C9FF, #92FE9D);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #00796b;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        .button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cancel an Appointment</h1>
+</header>
+
+<div class="container">
+    <form id="cancelForm">
+        <label for="appointmentId">Appointment ID</label>
+        <input type="text" id="appointmentId" name="appointmentId" required>
+
+        <input type="submit" value="Cancel Appointment">
+    </form>
+
+    <a href="patient_dashboard.html" class="button">Back to Dashboard</a>
+</div>
+
+<script>
+    document.getElementById('cancelForm').onsubmit = function(e) {
+        e.preventDefault(); // Prevents form from submitting normally
+        // Simulate cancellation process
+        alert('Appointment cancelled successfully!');
+        // Redirect to patient dashboard
+        window.location.href = 'patient_dashboard.html'; // Replace with the actual dashboard URL
+    };
+</script>
+
+</body>
+</html>

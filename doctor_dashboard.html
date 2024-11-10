@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Use full viewport height */
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            flex: 1; /* Allow the container to grow and take available space */
+        }
+        .button {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 25px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #004d40;
+        }
+        .logout {
+            background-color: #00796b; /* Match existing button color */
+            color: white;
+            padding: 15px 25px; /* Same padding as other buttons */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px 0; /* Space from other elements */
+            display: inline-block;
+            font-size: 16px; /* Adjust font size for consistency */
+        }
+        .logout:hover {
+            background-color: #004d40; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Doctor Dashboard</h1>
+</header>
+
+<div class="container">
+    <a href="request_medical_history.html" class="button">Request Patient Medical History</a>
+    <a href="view_appointments.html" class="button">View Appointment List</a>
+    <a href="update_patient_status.html" class="button">Update Patient Status</a>
+</div>
+
+<!-- Logout button styled to match existing buttons -->
+<button class="logout" onclick="window.location.href='logout.html'">Logout</button>
+
+</body>
+</html>

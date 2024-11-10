@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Prescription - SPNS Hospital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        label, input[type="text"], input[type="submit"] {
+            display: block;
+            margin: 15px auto;
+            font-size: 16px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();  // Prevent page refresh
+
+            // Get prescription details from the form
+            const patientName = document.getElementById('patientName').value;
+            const medicine = document.getElementById('medicine').value;
+            const dosage = document.getElementById('dosage').value;
+
+            // Check if inputs are valid
+            if (!patientName || !medicine || !dosage) {
+                alert('Please fill all fields.');
+                return;
+            }
+
+            // Create a prescription object
+            const prescription = {
+                patientName: patientName,
+                medicine: medicine,
+                dosage: dosage
+            };
+
+            // Retrieve existing prescriptions from localStorage or initialize as empty array
+            let prescriptions = JSON.parse(localStorage.getItem('prescriptions')) || [];
+
+            // Add the new prescription to the list
+            prescriptions.push(prescription);
+
+            // Save the updated prescriptions back to localStorage
+            localStorage.setItem('prescriptions', JSON.stringify(prescriptions));
+
+            // Show a success message and clear the form
+            alert('Prescription added successfully!');
+            document.getElementById('prescriptionForm').reset();
+        }
+        function handleSubmit(event) {
+            event.preventDefault();
+        
+            const patientName = document.getElementById('patientName').value;
+            const medicine = document.getElementById('medicine').value;
+            const dosage = document.getElementById('dosage').value;
+        
+            if (!patientName || !medicine || !dosage) {
+                alert('Please fill all fields.');
+                return;
+            }
+        
+            const prescription = {
+                patientName: patientName,
+                medicine: medicine,
+                dosage: dosage
+            };
+        
+            let prescriptions = JSON.parse(localStorage.getItem('prescriptions')) || [];
+            prescriptions.push(prescription);
+        
+            // Debugging Output
+            console.log('Prescription added:', prescription);
+            console.log('Updated prescription list:', prescriptions);
+        
+            localStorage.setItem('prescriptions', JSON.stringify(prescriptions));
+            alert('Prescription added successfully!');
+            document.getElementById('prescriptionForm').reset();
+        }
+        
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Give Prescription</h1>
+</header>
+
+<div class="container">
+    <form id="prescriptionForm" onsubmit="handleSubmit(event)">
+        <label for="patientName">Patient Name</label>
+        <input type="text" id="patientName" name="patientName" required>
+
+        <label for="medicine">Medicine</label>
+        <input type="text" id="medicine" name="medicine" required>
+
+        <label for="dosage">Dosage</label>
+        <input type="text" id="dosage" name="dosage" required>
+
+        <input type="submit" value="Submit Prescription">
+    </form>
+</div>
+
+</body>
+</html>
